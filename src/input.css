@@ -1,0 +1,60 @@
+/* =========================================================
+   DevSpace Portfolio — hoja de entrada de Tailwind CSS 4
+   Compilar con:  npm run build   (genera dist/output.css)
+   ========================================================= */
+
+@import "tailwindcss";
+
+/* El modo oscuro se activa con la clase .dark en <html>
+   (en lugar de depender solo de prefers-color-scheme).   */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------
+   Tokens de diseño (cada variable genera utilidades nuevas:
+   --color-ink  ->  bg-ink, text-ink, border-ink, ...)
+   Regla 60-30-10 del modo oscuro:
+     60 % ink    #0B1220  (fondo dominante)
+     30 % panel  #1E293B  (superficies: tarjetas, navbar)
+     10 % accent #22D3EE  (botones, enlaces, foco)
+   En modo claro: paper (60 %), mist (30 %), accent-strong (10 %).
+   --------------------------------------------------------- */
+@theme {
+  /* Tipografía: máximo dos familias externas */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Paleta principal */
+  --color-ink: #0B1220;
+  --color-panel: #1E293B;
+  --color-accent: #22D3EE;
+  --color-accent-strong: #0E7490; /* versión del acento con contraste >= 4.5:1 sobre fondo claro */
+
+  /* Superficies del modo claro */
+  --color-paper: #F8FAFC;
+  --color-mist: #E2E8F0;
+
+  /* Colores semánticos */
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+  --color-error-strong: #B91C1C; /* texto de error legible sobre fondo claro */
+  --color-warning: #F59E0B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Respeta a quienes piden menos movimiento en su sistema */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
