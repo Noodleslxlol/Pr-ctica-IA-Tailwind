@@ -3,9 +3,8 @@
 Portafolio académico de un estudiante de Ingeniería de Software, construido con **HTML5, Tailwind CSS 4 y JavaScript puro**, con apoyo de inteligencia artificial.
 
 - **Sitio publicado:** https://noodleslxlol.github.io/devspace-portfolio/
-- **Autor:** [Tu nombre]
+- **Autor:** Dilant Steven Almanza Figueroa
 
-> El contenido personal (nombre, universidad, proyectos) es demostrativo y está marcado con `[corchetes]` o con comentarios `<!-- EDITABLE -->`.
 
 ## Características
 
